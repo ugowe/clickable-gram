@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="clickableGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sd7-fL-MiO">
+                                <rect key="frame" x="65" y="0.0" width="470" height="380"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96C-Eg-dwW">
+                                <rect key="frame" x="241" y="397" width="119" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="gBP-IL-ymf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pb8-tc-Wxe"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="TAGS!!!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PBF-kB-dIB">
+                                <rect key="frame" x="0.0" y="475" width="600" height="125"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjT-Cl-maG">
+                                <rect key="frame" x="231" y="435" width="138" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="T6S-dF-ZZ6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Select Photo">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HwV-jT-MRf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WjT-Cl-maG" secondAttribute="bottom" constant="135" id="3Wj-GF-EHV"/>
+                            <constraint firstItem="96C-Eg-dwW" firstAttribute="centerX" secondItem="WjT-Cl-maG" secondAttribute="centerX" constant="0.5" id="4Si-rX-g3j"/>
+                            <constraint firstItem="Sd7-fL-MiO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8xD-jS-AMj"/>
+                            <constraint firstItem="Sd7-fL-MiO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="45" id="GBb-rp-PmR"/>
+                            <constraint firstItem="Sd7-fL-MiO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="LUn-16-9TW"/>
+                            <constraint firstItem="PBF-kB-dIB" firstAttribute="centerX" secondItem="WjT-Cl-maG" secondAttribute="centerX" id="TON-H3-wnP"/>
+                            <constraint firstItem="WjT-Cl-maG" firstAttribute="top" secondItem="96C-Eg-dwW" secondAttribute="bottom" constant="8" id="a6h-3m-AG6"/>
+                            <constraint firstItem="Sd7-fL-MiO" firstAttribute="centerX" secondItem="96C-Eg-dwW" secondAttribute="centerX" constant="-0.5" id="jGg-Di-DAb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PBF-kB-dIB" secondAttribute="bottom" id="lhL-oh-220"/>
+                            <constraint firstItem="96C-Eg-dwW" firstAttribute="top" secondItem="Sd7-fL-MiO" secondAttribute="bottom" constant="17" id="nqX-6F-nQm"/>
+                            <constraint firstItem="PBF-kB-dIB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="oIu-5g-SRN"/>
+                            <constraint firstItem="PBF-kB-dIB" firstAttribute="top" secondItem="WjT-Cl-maG" secondAttribute="bottom" constant="10" id="rww-5K-YQv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Sd7-fL-MiO" id="4kg-76-E77"/>
+                        <outlet property="textView" destination="PBF-kB-dIB" id="cEJ-OE-Wzo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="354"/>
+        </scene>
+    </scenes>
+</document>
