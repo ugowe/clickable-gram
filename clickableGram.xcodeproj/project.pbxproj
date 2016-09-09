@@ -15,7 +15,6 @@
 		A779FA071D5263E500516CF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A779FA051D5263E500516CF4 /* LaunchScreen.storyboard */; };
 		A779FA121D5263E500516CF4 /* clickableGramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779FA111D5263E500516CF4 /* clickableGramTests.swift */; };
 		A779FA1D1D5263E500516CF4 /* clickableGramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779FA1C1D5263E500516CF4 /* clickableGramUITests.swift */; };
-		A7EF2FC11D5B657000BBA44A /* LinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EF2FC01D5B657000BBA44A /* LinkViewController.swift */; };
 		A7EF2FC51D5B7D9700BBA44A /* ClarifaiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EF2FC41D5B7D9700BBA44A /* ClarifaiClient.m */; };
 		A7EF2FC71D5B7DB700BBA44A /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EF2FC61D5B7DB700BBA44A /* Credentials.swift */; };
 		A7EF2FC91D5B7E3800BBA44A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7EF2FC81D5B7E3800BBA44A /* Main.storyboard */; };
@@ -61,7 +60,6 @@
 		A779FA181D5263E500516CF4 /* clickableGramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = clickableGramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A779FA1C1D5263E500516CF4 /* clickableGramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clickableGramUITests.swift; sourceTree = "<group>"; };
 		A779FA1E1D5263E500516CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7EF2FC01D5B657000BBA44A /* LinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkViewController.swift; sourceTree = "<group>"; };
 		A7EF2FC21D5B7D9600BBA44A /* clickableGram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "clickableGram-Bridging-Header.h"; sourceTree = "<group>"; };
 		A7EF2FC31D5B7D9700BBA44A /* ClarifaiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClarifaiClient.h; sourceTree = "<group>"; };
 		A7EF2FC41D5B7D9700BBA44A /* ClarifaiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClarifaiClient.m; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 				A7EF2FC81D5B7E3800BBA44A /* Main.storyboard */,
 				A779F9F91D5263E500516CF4 /* AppDelegate.swift */,
 				A779F9FB1D5263E500516CF4 /* ViewController.swift */,
-				A7EF2FC01D5B657000BBA44A /* LinkViewController.swift */,
 				A7EF2FC31D5B7D9700BBA44A /* ClarifaiClient.h */,
 				A7EF2FC41D5B7D9700BBA44A /* ClarifaiClient.m */,
 				A7EF2FC61D5B7DB700BBA44A /* Credentials.swift */,
@@ -445,7 +442,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7EF2FC71D5B7DB700BBA44A /* Credentials.swift in Sources */,
-				A7EF2FC11D5B657000BBA44A /* LinkViewController.swift in Sources */,
 				A779F9FC1D5263E500516CF4 /* ViewController.swift in Sources */,
 				A779FA021D5263E500516CF4 /* clickableGram.xcdatamodeld in Sources */,
 				A779F9FA1D5263E500516CF4 /* AppDelegate.swift in Sources */,

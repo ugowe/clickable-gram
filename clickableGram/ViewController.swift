@@ -21,8 +21,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textView.delegate = self
-        
-        
     }
 
     
@@ -110,58 +108,45 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         return true
     }
     
-    // Takes in a String and returns a link that's an NSMutableAttributedString
-    func turnStringIntoLink(thisWord: String) -> NSMutableAttributedString {
+    func turnStringIntoLink(inputString: String) -> NSMutableAttributedString {
         
-        let newThisWord = thisWord.stringByReplacingOccurrencesOfString(" ", withString: "_")
-        let linkString = NSMutableAttributedString(string: thisWord)
+        // Replaces the spaces between words with underscores (e.g. 'apple pie' to 'apple_pie')
+        let underscoredInputString = inputString.stringByReplacingOccurrencesOfString(" ", withString: "_")
         
-        linkString.addAttribute(NSLinkAttributeName, value: NSURL(string: "https://en.wikipedia.org/wiki/\(newThisWord)")!, range: NSMakeRange(0, newThisWord.characters.count))
-         linkString.addAttribute(NSFontAttributeName, value: UIFont(name: "Arial", size: 16.0)!, range: NSMakeRange(0, newThisWord.characters.count))
+        // Turns a String into an NSMutableAttributedString
+        let linkString = NSMutableAttributedString(string: inputString)
+        
+        // Use addAttribute function to make 'linkString' an  NSURL object and to customize the font
+        linkString.addAttribute(NSLinkAttributeName, value: NSURL(string: "https://en.wikipedia.org/wiki/\(underscoredInputString)")!, range: NSMakeRange(0, underscoredInputString.characters.count))
+        linkString.addAttribute(NSFontAttributeName, value: UIFont(name: "Arial", size: 16.0)!, range: NSMakeRange(0, underscoredInputString.characters.count))
+        
         return linkString
     }
     
-    // concatenate attributed strings
-    func addTwo(left: NSAttributedString, right: NSAttributedString) -> NSAttributedString {
+    func turnTextViewTagsIntoLinks(tag: String) -> NSMutableAttributedString {
         
-        let result = NSMutableAttributedString()
-        let space = NSAttributedString(string: ", ")
-        
-        result.appendAttributedString(left)
-        result.appendAttributedString(space)
-        result.appendAttributedString(right)
-        return result
-    }
-    
-    func turnStringsIntoLinks(text: String) -> NSMutableAttributedString {
-        
-        //Seperate text strings into words by calling componentsSeparatedByString(", ")
-        let newText = text.componentsSeparatedByString(", ")
-        // Make each 'word' an NSAttributedString by calling NSAttributedString(string: "word")
+        // Seperate text strings into words by calling componentsSeparatedByString(", ")
+        let newTag = tag.componentsSeparatedByString(", ")
         
         // Combine each NSAttributed string back together
         let result = NSMutableAttributedString()
         let space = NSAttributedString(string: ", ")
         
         
-        // Append each NSAttributedString "word" to the result, with a ", ", so that the result will be one long NSAttributedString string
-        for word in newText {
-            let newWord = turnStringIntoLink(word)
-            result.appendAttributedString(newWord)
-            result.appendAttributedString(space)
+        for word in newTag {
+            let link = turnStringIntoLink(word)
             
+            // Append each NSAttributedString "word" to the result, with a ", ", so that the result will be one long NSMutableAttributedString
+            result.appendAttributedString(link)
+            result.appendAttributedString(space)
         }
-        
         return result
     }
     
     func performLinkMaker(textString: String) {
         let textString = self.textView.text
         
-        // My attempt to turn the textView.text into links
-        let magicLinkString = self.turnStringsIntoLinks(textString)
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        let magicLinkString = self.turnTextViewTagsIntoLinks(textString)
         
         self.textView.attributedText = magicLinkString
         self.textView.delegate = self
