@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
@@ -100,6 +100,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
+}
+
+extension ViewController: UITextViewDelegate {
+    
     func textViewShouldBeginEditing(textView: UITextView) -> Bool {
         return false
     }
@@ -149,12 +153,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let magicLinkString = self.turnTextViewTagsIntoLinks(textString)
         
         self.textView.attributedText = magicLinkString
+        self.textView.textAlignment = .Center
         self.textView.delegate = self
         self.textView.selectable = true
         self.textView.dataDetectorTypes = .Link
         self.textView.userInteractionEnabled = true
     }
-
     
 }
 
